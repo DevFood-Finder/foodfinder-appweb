@@ -1,0 +1,52 @@
+<mat-toolbar class="header">
+  <div class="header__left">
+    <img src="../../../../assets/images/profileImg.png" alt="" class="logo" />
+    <input class="search" type="search" placeholder="Buscar" />
+  </div>
+</mat-toolbar>
+<div class="home__container">
+  <section class="example-section">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <mat-checkbox class="example-margin"> </mat-checkbox>
+        {{ node.name }}
+      </mat-tree-node>
+      <mat-tree-node
+        *matTreeNodeDef="let node; when: hasChild"
+        matTreeNodePadding
+      >
+        <button
+          mat-icon-button
+          matTreeNodeToggle
+          [attr.aria-label]="'Toggle ' + node.name"
+        >
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+          </mat-icon>
+        </button>
+        {{ node.name }}
+      </mat-tree-node>
+    </mat-tree>
+  </section>
+
+  <div class="section__restaurant">
+    <div>
+      <h2 class="title">Restaurantes cerca de donde estas</h2>
+      <app-list-restaurant-card
+        [listRestaurants]="filterRestaurants"
+      ></app-list-restaurant-card>
+    </div>
+    <div>
+      <h2 class="title">Restaurantes con Ofertas Exclusivas</h2>
+      <app-list-restaurant-card
+        [listRestaurants]="salesRestaurant"
+      ></app-list-restaurant-card>
+    </div>
+    <div>
+      <h2 class="title">Mejores restaurantes en distrito</h2>
+      <app-list-restaurant-card
+        [listRestaurants]="bestRestaurantsDistrite"
+      ></app-list-restaurant-card>
+    </div>
+  </div>
+</div>
