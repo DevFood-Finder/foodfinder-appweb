@@ -1,0 +1,56 @@
+.home__container {
+  background: #ebebd3;
+  padding: 24px 34px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  flex-direction: row;
+  gap: 32px 42px;
+  .title {
+    font-size: 32px;
+    line-height: 36px;
+    color: #1f271b;
+    font-weight: 500;
+  }
+}
+.header {
+  background: #1f271b;
+  padding: 2.5rem 6.5rem;
+  .header__left {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    gap: 48px;
+    .logo {
+      width: 10%;
+      height: 70px;
+    }
+    .search {
+      border-radius: 24px;
+      border: 1px solid #ebebd3;
+      background: #1f271b;
+      height: 28px;
+      width: 350px;
+    }
+  }
+}
+
+.example-section {
+  background: #3c0000;
+  span {
+    color: #ebebd3;
+  }
+}
+
+mat-tree {
+  background: #3c0000;
+}
+
+mat-tree-node {
+  color: #ebebd3;
+}
+
+.section__restaurant {
+  display: flex;
+  flex-direction: column;
+  gap: 78px;
+}
