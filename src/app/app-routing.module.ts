@@ -10,13 +10,11 @@ import { NewPasswordComponent} from "./authentication/pages/new-password/new-pas
 import {
   CreateAccountRestaurantComponent
 } from "./authentication/pages/create-account-restaurant/create-account-restaurant.component";
-import {UpdateClientRequest} from "./iam/model/update-client.request";
 import {ClientDetailsComponent} from "./authentication/pages/client-details/client-details.component";
 import {RestaurantDetailsComponent} from "./authentication/pages/restaurant-details/restaurant-details.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'detail', component: DetailComponent },
   { path: 'register-client', component: CreateAccountClientComponent },
   { path: 'update-client', component: ClientDetailsComponent},
   { path: 'update-restaurant', component: RestaurantDetailsComponent},
@@ -25,6 +23,7 @@ const routes: Routes = [
   { path: 'restore', component: RestorePasswordComponent },
   { path: 'new-password', component: NewPasswordComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path: 'restaurant-detail/:id/:name', component: DetailComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({

@@ -5,7 +5,7 @@
   </div>
 </mat-toolbar>
 <div class="detail__container">
-  <h1 class="title">Restaurante Buen Gusto</h1>
+  <h1 class="title">{{ restaurant.restaurantName }}</h1>
   <div class="banner__image">
     <img
       src="https://hips.hearstapps.com/hmg-prod/images/elle-restaurantes-decoracion-bonita-instagram-raimunda-madrid-1573068471.jpg?crop=0.9333333333333333xw:1xh;center,top&resize=1200:*"
@@ -41,35 +41,32 @@
   </div>
   <div class="grid tmp-col-3 gap-md mb-lg">
     <div class="card__detail">
-      <span> Calificaciones y Reseñas </span>
-      <span> Calificaciones: </span>
+      <span> Calificaciones</span>
       <div class="flex justify-between">
         <span> Comida</span>
-        <span> 3</span>
+        <span> {{restaurant.rating}}</span>
       </div>
       <div class="flex justify-between">
         <span> Servicio</span>
-        <span> 4</span>
+        <span> {{restaurant.rating}} </span>
       </div>
       <div class="flex justify-between">
         <span> Precio</span>
-        <span> 3</span>
+        <span> {{restaurant.rating}} </span>
       </div>
       <div class="flex justify-between">
         <span> Ambiente</span>
-        <span> 3</span>
+        <span> {{restaurant.rating}}</span>
       </div>
     </div>
     <div class="card__detail">
       <span> Detalles </span> <br>
       <div class="flex justify-between">
         <span> Rango de precios </span>
-        <span> S/.50 A S/.150 </span>
       </div>
       <div class="flex justify-between">
         <span> Tipos de comida:</span> <br>
           <span>  </span>
-          <span> Criollo y Marino </span>
 
       </div>
       <div class="flex justify-between">
@@ -78,24 +75,24 @@
     </div>
     <div class="card__detail">
       <span> Ubicación y contacto </span>
-        <br>
+      <br><br>
       <div class="flex justify-between">
         <span> Dirección exacta</span>
-          <span> calle san juan 234</span>
+          <span> {{restaurant.streetAddress}}</span>
 
       </div>
       <div class="flex justify-between">
         <span> Distrito</span>
-         <span> San Isidro</span>
+         <span> {{restaurant.city}}</span>
 
       </div>
       <div class="flex justify-between">
         <span> Sitio Web</span>
-          <span> buengusto.com </span>
+          <span> www.{{restaurant.restaurantName.toLocaleLowerCase()}}.com </span>
       </div>
       <div class="flex justify-between">
         <span> Telefono</span>
-        <span> 992663791</span>
+        <span> {{restaurant.phone}}</span>
 
       </div>
     </div>
