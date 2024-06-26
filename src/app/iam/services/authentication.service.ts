@@ -10,6 +10,8 @@ import {SignUpResponse} from "../model/sign-up.response";
 import {UpdateClientRequest} from "../model/update-client.request";
 import {UserModel} from "../model/user.model";
 import {UpdateRestaurantRequest} from "../model/update-restaurant.request";
+import {Restaurant} from "../../restaurant/Restaurant";
+import {RestaurantModel} from "../model/restaurant.model";
 
 /**
  * Service for authentication.
@@ -76,7 +78,7 @@ export class AuthenticationService {
 
 
   GetRestaurantById(id:number){
-    return this.http.get<UserModel>(`${this.basePath}/Restaurants/${id}`, this.httpOptions);
+    return this.http.get<RestaurantModel>(`${this.basePath}/Restaurants/${id}`, this.httpOptions);
   }
 
   UpdateRestaurant(updateRestaurantRequest: UpdateRestaurantRequest) {
@@ -96,7 +98,7 @@ export class AuthenticationService {
       });
 
   }
-  
+
   signUpRestaurant(signUpRequest: SignUpRequest) {
     return this.http.post<SignUpResponse>(`${this.basePath}/auth/register-Restaurant`, signUpRequest, this.httpOptions)
       .subscribe({
@@ -112,7 +114,9 @@ export class AuthenticationService {
       });
   }
 
-
+  GetAllRestaurants(){
+    return this.http.get<RestaurantModel[]>(`${this.basePath}/Restaurants`, this.httpOptions);
+  }
 
 
   /**

@@ -9,6 +9,7 @@ import {
   MatTreeModule,
 } from '@angular/material/tree';
 import {AuthenticationService} from "../../../iam/services/authentication.service";
+import {RestaurantModel} from "../../../iam/model/restaurant.model";
 
 interface FoodNode {
   name: string;
@@ -57,60 +58,8 @@ export class HomeComponent implements OnInit {
     sales: true,
     description: 'Es un buen restaurante con rica comida excelente ambiente',
   };
-  restauran2: Restaurant = {
-    name: 'Buen Sabor',
-    distrite: 'San Borja',
-    urlImage:
-      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/67/20/ce/caption.jpg?w=600&h=-1&s=1',
-    rating: 4,
-    sales: false,
-    description: 'Es un buen restaurante con rica comida excelente ambiente',
-  };
-  restaurant3: Restaurant = {
-    name: 'RestaurantBuen Gusto',
-    distrite: 'San Isidro',
-    urlImage:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSt4YDaCXAvzdsR6HpShp_qSrlX99AJssX3g&usqp=CAU',
-    rating: 3,
-    sales: false,
-    description: 'Es un buen restaurante con rica comida excelente ambiente',
-  };
-  restauran4: Restaurant = {
-    name: 'Restaurante Buen Gusto',
-    distrite: 'Miraflores',
-    urlImage:
-      'https://limabywalking.com/blog/wp-content/uploads/2019/07/javier-restaurante-barranco.jpg',
-    rating: 5,
-    sales: false,
-    description: 'Es un buen restaurante con rica comida excelente ambiente',
-  };
-  restauran5: Restaurant = {
-    name: 'Restaurante Buen Gusto',
-    distrite: 'San Borja',
-    urlImage:
-      'https://media.admagazine.com/photos/651aeed9da5f4d9a3844a94b/16:9/w_1920,c_limit/Porten%CC%83o-restaurante-1.jpg',
-    rating: 4,
-    sales: true,
-    description: 'Es un buen restaurante con rica comida excelente ambiente',
-  };
-  restauran6: Restaurant = {
-    name: 'Restaurante Buen Gusto',
-    distrite: 'Miraflores',
-    urlImage:
-      'https://hips.hearstapps.com/hmg-prod/images/elle-restaurantes-decoracion-bonita-instagram-raimunda-madrid-1573068471.jpg?crop=0.9333333333333333xw:1xh;center,top&resize=1200:*',
-    rating: 2,
-    sales: false,
-    description: 'Es un buen restaurante con rica comida excelente ambiente',
-  };
 
-  listRestaurants = [
-    this.restaurant,
-    this.restauran2,
-    this.restaurant3,
-    this.restauran4,
-    this.restauran5,
-    this.restauran6,
-  ];
+  restaurantList: RestaurantModel[] = [];
 
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -141,6 +90,10 @@ export class HomeComponent implements OnInit {
   bestRestaurantsDistrite: any;
   salesRestaurant: any;
 
+
+
+
+
   logout() {
     this.authenticationService.signOut();
     this.router.navigate(['/login']);
@@ -149,10 +102,24 @@ export class HomeComponent implements OnInit {
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
   ngOnInit(): void {
-    this.filterRestaurantsByLocation();
-    this.filterRestaurantsBySale();
-    this.filterRestaurantsByBestOffers();
+    console.log('probando');
+
+    this.authenticationService.GetAllRestaurants().subscribe(restaurants=>{
+      console.log(restaurants);
+      this.restaurantList = restaurants;
+    });
+
+    //this.filterRestaurantsByLocation();
+    //this.filterRestaurantsBySale();
+    //this.filterRestaurantsByBestOffers();
   }
+
+  viewMore(restaurantName: string, restaurantId: number) {
+    this.router.navigate(['/restaurant-detail', restaurantId, restaurantName]);
+  }
+
+
+  /*
   searchForm: any = '';
   filterRestaurantsByLocation() {
     this.filterRestaurants = this.listRestaurants.filter(
@@ -174,5 +141,7 @@ export class HomeComponent implements OnInit {
     this.salesRestaurant = this.listRestaurants.filter(
       (restaurant) => restaurant.sales
     );
-  }
+  }*/
+
+
 }
