@@ -1,0 +1,12 @@
+<mat-card class="restaurantCard__container" (click)="goToDetail()">
+  <img mat-card-image src="{{ restaurantCart.urlImage }}" />
+  <mat-card-content class="restaurantCard__content">
+    <span class="restaurantCard__content__title">
+      {{ restaurantCart.name }}
+    </span>
+    <span class="restaurantCard__content__subtitle">
+      <span> Distrito :</span>
+      <span> {{ restaurantCart.distrite }}</span>
+    </span>
+  </mat-card-content>
+</mat-card>

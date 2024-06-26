@@ -1,0 +1,30 @@
+// .example-card {
+//   max-width: 400px;
+// }
+
+.restaurantCard__container {
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 150px;
+    max-height: 250px;
+  }
+  .restaurantCard__content {
+    background: #3c0000;
+    border-radius: 0px 0px 3px 3px;
+    display: flex;
+    flex-direction: column;
+    .restaurantCard__content__title {
+      color: #ebebd3;
+      font-weight: 600;
+      size: 16px;
+      line-height: 36px;
+    }
+    .restaurantCard__content__subtitle {
+      color: #ebebd3;
+      font-weight: 300;
+      size: 16px;
+      line-height: 36px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.listRestaurants__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.home__container {
+  background: #ebebd3;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 0px 0px;
+  input {
+  }
+}
