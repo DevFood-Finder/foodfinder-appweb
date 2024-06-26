@@ -1,0 +1,42 @@
+<body>
+<div>
+  <div class="container">
+    <img src="../../../img/LogoFoodFinder.png" class="logo-FoodFinder" alt="LogoFoodFinder">
+    <h1 class="h1-login">Registro</h1>
+    <form>
+      <div>
+        <label class="label-login">Nombre del restaurante</label>
+        <input class="inputs-login" type="text" id="restaurant-name" placeholder="Ingrese el nombre del restaurante" required/>
+      </div>
+      <div>
+        <label class="label-login" for="email">Correo electronico</label>
+        <input class="inputs-login" type="email" id="email" placeholder="Ingrese un correo"  required/>
+      </div>
+      <div>
+        <label class="label-login" for="password">Nombre del dueño</label>
+        <input class="inputs-login" type="text" id="owner-name" placeholder="Ingrese el nombre del dueño"  required/>
+      </div>
+      <div>
+        <label class="label-login" for="password">DNI</label>
+        <input class="inputs-login" type="text" id="DNI" placeholder="Ingrese el nombre"  required/>
+      </div>
+      <div>
+        <label class="label-login" for="password">Contraseña</label>
+        <input class="inputs-login" type="password" id="password" placeholder="Ingrese su DNI" required/>
+      </div>
+      <div>
+        <label class="label-login" for="password">Confirmar Contraseña</label>
+        <input class="inputs-login" type="password" id="again-password" placeholder="Ingrese otra vez la contraseña"  required/>
+      </div>
+      <div>
+        <input class="checkbox-login" type="checkbox" id="check-box" required/>
+        <label for="check-box" class="privacy-policy">He leído y acepto las políticas de privacidad</label>
+      </div>
+      <div>
+        <button mat-raised-button (click)="onReturnLogin()" class="submit-button-login" type="submit">Registrarse</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+
