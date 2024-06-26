@@ -3,27 +3,24 @@
   <div class="container">
     <img src="../../../img/LogoFoodFinder.png" class="logo-FoodFinder" alt="LogoFoodFinder">
     <h1 class="h1-login">Iniciar Sesión</h1>
-    <form>
+    <form [formGroup]="form" (submit)="onSubmit()">
       <div>
         <label class="label-login" for="email">E-mail</label>
-        <input class="inputs-login" type="email" id="email" placeholder="Ingrese un correo" required/>
+        <input class="inputs-login" type="email" id="email" placeholder="Ingrese un correo" required formControlName="email"/>
       </div>
       <div>
         <label class="label-login" for="password">Contraseña</label>
-        <input class="inputs-login" type="password" id="password" placeholder="Ingrese una contraseña" required/>
+        <input class="inputs-login" type="password" id="password" placeholder="Ingrese una contraseña" required formControlName="password"/>
       </div>
       <div>
         <button mat-raised-button class="submit-button-login" type="submit">Iniciar Sesión</button>
-      </div>
-      <div>
-        <button mat-raised-button class="submit-button-login" type="submit" (click)="onCreateAccount()">Crear cuenta</button>
       </div>
       <div class="forgot-password">
         <p (click)="onForgotPassword()" role="button" tabindex="0">¿Olvidaste tu contraseña?</p>
       </div>
       <div class="other-question">
-        <p>¿Eres dueño de restaurante?</p>
-        <p (click)="onCreateAccount()" role="button" tabindex="0">¿No tienes cuenta aun? Regístrate</p>
+        <p (click)="onCreateRestaurant()" role="button" tabindex="0">¿Eres dueño de restaurante?</p>
+        <p (click)="onCreateClient()" role="button" tabindex="0">¿No tienes cuenta aun? Regístrate</p>
       </div>
     </form>
   </div>

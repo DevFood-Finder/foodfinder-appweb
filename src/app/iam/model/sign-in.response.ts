@@ -1,13 +1,13 @@
+import {UserModel} from "./user.model";
+
 export class SignInResponse {
 
-  public id: number;
-  public username: string;
+  public user: UserModel;
   public token: string;
 
-  constructor(id: number, username: string, token: string) {
+  constructor(user:UserModel, token: string) {
     this.token = token;
-    this.username = username;
-    this.id = id;
+    this.user = user;
   }
 
 }

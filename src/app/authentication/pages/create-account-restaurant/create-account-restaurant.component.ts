@@ -7,16 +7,16 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 
 
 @Component({
-  selector: 'app-crate-account',
-  templateUrl: './create-account.component.html',
+  selector: 'app-crate-account-restaurant',
+  templateUrl: './create-account-restaurant.component.html',
   standalone: true,
   imports: [
     ReactiveFormsModule
   ],
-  styleUrl: './create-account.component.css'
+  styleUrl: './create-account-restaurant.component.css'
 })
 
-export class CreateAccountComponent extends BaseFormComponent implements OnInit{
+export class CreateAccountRestaurantComponent extends BaseFormComponent implements OnInit{
   form!: FormGroup;
   submitted = false;
 
@@ -52,7 +52,7 @@ export class CreateAccountComponent extends BaseFormComponent implements OnInit{
 
 
     const signUpRequest = new SignUpRequest(firstname, lastname, email, password, street, number, postalCode, city, country);
-    this.authenticationService.signUpClient(signUpRequest);
+    this.authenticationService.signUpRestaurant(signUpRequest);
     this.submitted = true;
   }
 

@@ -1,0 +1,18 @@
+<body>
+<div>
+  <div class="container">
+    <img src="../../../img/LogoFoodFinder.png" class="logo-FoodFinder" alt="LogoFoodFinder">
+    <h1 class="h1-login">Registro</h1>
+    <form [formGroup]="form" (submit)="onSubmit()">
+      <div>
+        <label class="label-login" for="nickName">Nickname</label>
+        <input class="inputs-login" type="text" id="nickName" placeholder="Ingrese su Nickname" required formControlName="nickName"/>
+      </div>
+      <div>
+        <button mat-raised-button class="submit-button-login" type="submit">Registrarse</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+

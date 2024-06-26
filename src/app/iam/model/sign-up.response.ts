@@ -1,10 +1,10 @@
-import {User} from "./user";
+import {UserModel} from "./user.model";
 
 export class SignUpResponse {
 
-  public user: User;
+  public user: UserModel;
 
-  constructor(user: User) {
+  constructor(user: UserModel) {
     this.user = user;
   }
 }

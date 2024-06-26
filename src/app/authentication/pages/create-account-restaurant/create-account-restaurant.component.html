@@ -1,0 +1,58 @@
+<body>
+<div>
+  <div class="container">
+    <img src="../../../img/LogoFoodFinder.png" class="logo-FoodFinder" alt="LogoFoodFinder">
+    <h1 class="h1-login">Registro</h1>
+    <form [formGroup]="form" (submit)="onSubmit()">
+      <div>
+        <label class="label-login" for="firstname">Primer Nombre</label>
+        <input class="inputs-login" type="text" id="firstname" placeholder="Ingrese su Primer Nombre" required formControlName="firstname"/>
+      </div>
+      <div>
+        <label class="label-login" for="lastname">Apellido</label>
+        <input class="inputs-login" type="email" id="lastname" placeholder="Ingrese su primer Ppellido"  required formControlName="lastname"/>
+      </div>
+      <div>
+        <label class="label-login" for="email">Correo electronico</label>
+        <input class="inputs-login" type="text" id="email" placeholder="Ingrese su correo electronico"  required formControlName="email"/>
+      </div>
+      <div>
+        <label class="label-login" for="password">Contraseña</label>
+        <input class="inputs-login" type="password" id="password" placeholder="Ingrese su contraseña" required formControlName="password"/>
+      </div>
+      <div>
+        <label class="label-login" for="password">Confirmar Contraseña</label>
+        <input class="inputs-login" type="password" id="again-password" placeholder="Ingrese otra vez la contraseña"  required formControlName="password"/>
+      </div>
+      <div>
+        <label class="label-login" for="street">calle</label>
+        <input class="inputs-login" type="text" id="street" placeholder="Ingrese su calle"  required formControlName="street"/>
+      </div>
+      <div>
+        <label class="label-login" for="number">numero</label>
+        <input class="inputs-login" type="text" id="number" placeholder="Ingrese el numero de su vivienda"  required formControlName="number"/>
+      </div>
+      <div>
+        <label class="label-login" for="postalCode">codigo postal</label>
+        <input class="inputs-login" type="text" id="postalCode" placeholder="Ingrese su codigo postal"  required formControlName="postalCode"/>
+      </div>
+      <div>
+        <label class="label-login" for="city">ciudad</label>
+        <input class="inputs-login" type="text" id="city" placeholder="Ingrese su ciudad"  required formControlName="city"/>
+      </div>
+      <div>
+        <label class="label-login" for="country">pais</label>
+        <input class="inputs-login" type="text" id="country" placeholder="Ingrese su pais"  required formControlName="country"/>
+      </div>
+      <div>
+        <input class="checkbox-login" type="checkbox" id="check-box" required/>
+        <label for="check-box" class="privacy-policy">He leído y acepto las políticas de privacidad</label>
+      </div>
+      <div>
+        <button mat-raised-button class="submit-button-login" type="submit">Registrarse</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+

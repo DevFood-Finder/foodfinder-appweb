@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Restaurant } from '../../../restaurant/Restaurant';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { FlatTreeControl } from '@angular/cdk/tree';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
   MatTreeModule,
 } from '@angular/material/tree';
+import {AuthenticationService} from "../../../iam/services/authentication.service";
 
 interface FoodNode {
   name: string;
@@ -40,6 +40,7 @@ interface ExampleFlatNode {
   name: string;
   level: number;
 }
+
 
 @Component({
   selector: 'app-home',
@@ -133,12 +134,18 @@ export class HomeComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
     this.dataSource.data = TREE_DATA;
   }
   filterRestaurants: any;
   bestRestaurantsDistrite: any;
   salesRestaurant: any;
+
+  logout() {
+    this.authenticationService.signOut();
+    this.router.navigate(['/login']);
+  }
+
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
   ngOnInit(): void {
@@ -152,6 +159,10 @@ export class HomeComponent implements OnInit {
       (restaurant: any) => restaurant.distrite == 'San Borja'
     );
   }
+
+
+
+
 
   filterRestaurantsByBestOffers() {
     this.bestRestaurantsDistrite = this.listRestaurants.filter(
