@@ -15,6 +15,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DetailComponent } from './public/pages/detail/detail.component';
+import {HttpClientModule, provideHttpClient, withInterceptors} from "@angular/common/http";
+import {authenticationInterceptor} from "./iam/services/authentication.interceptor";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { DetailComponent } from './public/pages/detail/detail.component';
     RestaurantCardComponent,
     ListRestaurantCardComponent,
     DetailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -35,8 +38,11 @@ import { DetailComponent } from './public/pages/detail/detail.component';
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
+    HttpClientModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [provideAnimationsAsync(),
+    provideHttpClient(withInterceptors([authenticationInterceptor]))
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
