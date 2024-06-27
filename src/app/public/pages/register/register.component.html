@@ -1,0 +1,84 @@
+<div class="register__container">
+  <div class="register__card">
+    <span class="title"> REGISTRATE</span>
+    <form
+      action="
+    "
+      [formGroup]="registerForm"
+      class="form__register"
+    >
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" />
+        <mat-error *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <div *ngIf="name?.errors?.['required']">El nombre es requerido.</div>
+          <div *ngIf="name?.errors?.['minlength']">
+            El nombre debe tener al menos 3 caracteres.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error
+          *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)"
+        >
+          <div *ngIf="lastName?.errors?.['required']">
+            El apellido es requerido.
+          </div>
+          <div *ngIf="lastName?.errors?.['minlength']">
+            El apellido debe tener al menos 3 caracteres.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error
+          *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)"
+        >
+          <div *ngIf="lastName?.errors?.['required']">
+            El apellido es requerido.
+          </div>
+          <div *ngIf="lastName?.errors?.['minlength']">
+            El apellido debe tener al menos 3 caracteres.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" />
+        <mat-error
+          *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+        >
+          <div *ngIf="password?.errors?.['required']">
+            La contraseña es requerida.
+          </div>
+          <div *ngIf="password?.errors?.['minlength']">
+            La contraseña debe tener al menos 6 caracteres.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirmar Contraseña</mat-label>
+        <input matInput formControlName="confirmPassword" />
+        <mat-error
+          *ngIf="
+            confirmPassword?.invalid &&
+            (confirmPassword?.dirty || confirmPassword?.touched)
+          "
+        >
+          <div *ngIf="confirmPassword?.errors?.['required']">
+            La contraseña es requerida.
+          </div>
+          <div *ngIf="confirmPassword?.errors?.['minlength']">
+            La contraseña debe tener al menos 6 caracteres.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <div class="actions">
+        <button mat-raised-button>Aceptar</button>
+      </div>
+    </form>
+  </div>
+</div>

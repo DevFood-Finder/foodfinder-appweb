@@ -1,0 +1,36 @@
+.register__container {
+  background: #ebebd3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .register__card {
+    background: #3c0000;
+    display: flex;
+    gap: 28px;
+    flex-direction: column;
+    padding: 28px;
+    border-radius: 24px;
+    width: 40%;
+    .form__register {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 72px;
+    }
+    .title {
+      font-size: 24px;
+      text-align: center;
+    }
+    span {
+      color: white;
+    }
+    .actions {
+      display: flex;
+      justify-content: end;
+    }
+  }
+  .register__title {
+    text-align: center;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,89 @@
+<div class="register__container">
+  <div class="register__card">
+    <span class="title"> REGISTRA TU RESTAURANTE</span>
+    <form
+      action="
+      "
+      [formGroup]="registerForm"
+      class="form__register"
+    >
+      <div class="flex col">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre del restaurante</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+            <div *ngIf="name?.errors?.['required']">
+              El nombre es requerido.
+            </div>
+            <div *ngIf="name?.errors?.['minlength']">
+              El nombre debe tener al menos 3 caracteres.
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+            <div *ngIf="name?.errors?.['required']">
+              El nombre es requerido.
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" />
+          <mat-error
+            *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+          >
+            <div *ngIf="password?.errors?.['required']">
+              La contraseña es requerida.
+            </div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="flex col">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+            <div *ngIf="email?.errors?.['required']">
+              El correo es requerido
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>DNI</mat-label>
+          <input matInput formControlName="dni" />
+          <mat-error *ngIf="dni?.invalid && (dni?.dirty || dni?.touched)">
+            <div *ngIf="dni?.errors?.['required']">
+              La contraseña es requerida.
+            </div>
+            <div *ngIf="dni?.errors?.['minlength']">
+              La contraseña debe tener al menos 6 caracteres.
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Confirmar Contraseña</mat-label>
+          <input matInput formControlName="confirmPassword" />
+          <mat-error
+            *ngIf="
+              confirmPassword?.invalid &&
+              (confirmPassword?.dirty || confirmPassword?.touched)
+            "
+          >
+            <div *ngIf="confirmPassword?.errors?.['required']">
+              La contraseña es requerida.
+            </div>
+            <div *ngIf="confirmPassword?.errors?.['minlength']">
+              La contraseña debe tener al menos 6 caracteres.
+            </div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="actions">
+      <button mat-raised-button>Aceptar</button>
+    </div>
+  </div>
+</div>
